@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Now;
+    font-weight: bold;
+    src: url(fonts/Now-Bold.otf);}
+@font-face {
+    font-family: NowLight;
+    src: url(fonts/Now-Light.otf);}
+@font-face {
+    font-family: NowMedium;
+    src: url(fonts/Now-Medium.otf);}
+body {background-color: black;}
+p {color: white;
+    font-family: NowLight;
+    font-size: 18px;}
+h1 {color: white;
+    text-align: center;
+    font-family: Now;
+    letter-spacing: 1.5px;}
+h2 {color: white;
+    text-align: center;
+    font-family: Now;}
+.bg-image {position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    background-image: url('images/poster.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.5;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);}
+.button {background-color: #000000;
+    border-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-top: 18px;
+    padding-bottom: 13px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: NowMedium;
+    cursor: pointer;}
+.button:hover {background-color: white;
+    color: black}
+.password {box-sizing: border-box;
+    padding: 12px 12px;
+    margin-right: 5px;
+    font-size: 20px;}
+.tutorial {position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 9999;}
+.form {position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;}

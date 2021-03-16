@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tutorial</title>
+        <link rel="icon" href="images/club.png">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="node_modules/video.js/dist/video-js.min.css" />
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <script src='build/forge-sha256.min.js'></script>
+    </head>
+
+    <body>
+        <div class="bg-image" id="bg-image"></div>
+
+        <div class="form" id="form">
+            <h1>Enter password</h1>
+            <input type="text" id="password" class="password">
+            <input id="button" type="button" class="button" value="OK">
+            <p>*Letter case matters</p>
+        </div>
+
+        <div class="tutorial" id="hiddenTutorial">
+            <div class="iframe-video">
+                <iframe src="https://player.vimeo.com/video/524288747" 
+                width="820" 
+                height="660" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <script>
+            var input = document.getElementById("password");
+            var div = document.getElementById("hiddenTutorial");
+            var form = document.getElementById("form");
+            var btn = document.getElementById("button");
+            var bg = document.getElementById("bg-image");
+    
+            btn.addEventListener("click", validate);
+    
+            function validate() {
+                if (forge_sha256(input.value) == '6b3b48be2c509c6c840845c91fe95e62fb3fa26dc96ddce7fa124086e269af7f') {
+                    div.style.display = "block";
+                    bg.style.opacity = 0.15;
+                    form.style.display = "none";
+                } else {
+                    input.focus();
+                    input.setSelectionRange(0, input.value.length);
+                    alert('Invalid password!');
+                }
+            }
+                
+            input.addEventListener('keypress', function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    btn.click();
+                }
+            })
+        </script>
+    </body>
+</html>
